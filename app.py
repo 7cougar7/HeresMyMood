@@ -72,7 +72,7 @@ def get_feed(user_uuid):
         feed_items.append(items)
     feed_items = [item for sublist in feed_items for item in sublist]
     sorted_feed = sorted(feed_items, key=lambda d: float(d['timestamp']), reverse=True)
-    return str(sorted_feed)
+    return {'feed': str(sorted_feed)}
 
 
 if __name__ == '__main__':
